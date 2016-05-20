@@ -14,6 +14,7 @@ public class Main {
         CppLanguageAnalizer cppAnalizer = new CppLanguageAnalizer(content);
         Report raport = cppAnalizer.analizeCode();
         System.out.println("Status is valid: " + raport.isStatus());
+        System.out.println(raport.getMessages().size());
         if(!raport.isStatus()){
             raport.getMessages().stream().forEach(e -> {System.out.println(e.getValue());
                 System.out.println();});
