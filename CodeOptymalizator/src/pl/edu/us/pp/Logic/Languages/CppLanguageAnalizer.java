@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Adrian on 2016-05-19.
  */
-public class CppLanguageAnalizer implements LanguageOptimizer {
+public class CppLanguageAnalizer extends RootLanguage {
 
     private String file;
     private String[] splittedFile;
