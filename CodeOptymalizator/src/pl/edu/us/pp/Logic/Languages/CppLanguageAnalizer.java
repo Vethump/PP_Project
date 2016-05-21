@@ -54,7 +54,7 @@ public class CppLanguageAnalizer implements LanguageOptimizer {
                     m1.find();
                     value = Integer.parseInt(m1.group());
                     if ((value & (value - 1)) == 0) {
-                        messageList.add(new Message("\"" + m.group(j) + "\"\nW linii: \n\""+ splittedFile[i] +"\"\nMoże być zastąpiony przy pomocy operacji << (jest to potęga 2ki)"));
+                        messageList.add(new Message("\"" + m.group(j) + "\"\nW linii: \n\""+ i + ": "+ splittedFile[i] +"\"\nMoże być zastąpiony przy pomocy operacji << (jest to potęga 2ki)"));
                     }
                 }
             }
