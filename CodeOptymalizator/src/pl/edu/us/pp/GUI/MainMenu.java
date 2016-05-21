@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Scanner;
 
 /**
@@ -27,6 +28,7 @@ public class MainMenu extends JFrame{
     public MainMenu() throws HeadlessException, IOException {
         //BufferedImage gauge = ImageIO.read(getClass().getResourceAsStream("/resources/gauge.png"));
         setContentPane(panel1);
+        setLocation(600,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         comboBox1.addItem("C++");
         comboBox1.addItem("Java");
@@ -39,6 +41,28 @@ public class MainMenu extends JFrame{
             progressBar1.setValue(value);
             if(value > 80){
                 progressBar1.setForeground(Color.RED);
+            }
+            if(value >= 100){
+                try {
+                    ExplosionFrame explosionFrame = new ExplosionFrame("/resources/Fireworks.4.gif", 1200, 300);
+                    explosionFrame.setVisible(true);
+
+                    ExplosionFrame explosionFrame2 = new ExplosionFrame("/resources/giphy.gif", 400, 600);
+                    explosionFrame2.setVisible(true);
+
+                    ExplosionFrame explosionFrame3 = new ExplosionFrame("/resources/giphy2.gif", 800, 500);
+                    explosionFrame3.setVisible(true);
+
+                    ExplosionFrame explosionFrame4 = new ExplosionFrame("/resources/giphy2.gif", 200, 200);
+                    explosionFrame4.setVisible(true);
+
+                    Winner winner = new Winner();
+                    winner.setVisible(true);
+
+
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         wczytajButton.addActionListener(e -> {

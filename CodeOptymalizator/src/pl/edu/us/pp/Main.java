@@ -23,7 +23,7 @@ public class Main {
                 System.out.println();});
         }
         */
-        
+
         MainMenu okno = new MainMenu();
         okno.setSize(800,600);
         okno.setVisible(true);
