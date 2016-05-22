@@ -7,6 +7,8 @@ import pl.edu.us.pp.Logic.Utility.Report;
 
 import javax.activation.UnsupportedDataTypeException;
 import javax.imageio.ImageIO;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -80,11 +82,19 @@ public class MainMenu extends JFrame{
                         ExplosionFrame explosionFrame4 = new ExplosionFrame("/resources/giphy2.gif", 200, 200);
                         explosionFrame4.setVisible(true);
 
+                        DogeFrame dogeFrame = new DogeFrame("/resources/Doge2.png", 0, 500);
+                        dogeFrame.setVisible(true);
+
+
                         Winner winner = new Winner();
                         winner.setVisible(true);
 
 
                     } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (UnsupportedAudioFileException e1) {
+                        e1.printStackTrace();
+                    } catch (LineUnavailableException e1) {
                         e1.printStackTrace();
                     }
                 }

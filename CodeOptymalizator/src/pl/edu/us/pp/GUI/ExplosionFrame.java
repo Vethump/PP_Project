@@ -21,6 +21,5 @@ public class ExplosionFrame extends JFrame{
         setSize(550,550);
         setLocation(x,y);
         imageLabel.setIcon(new ImageIcon(getClass().getResource(resource)));
-
     }
 }
