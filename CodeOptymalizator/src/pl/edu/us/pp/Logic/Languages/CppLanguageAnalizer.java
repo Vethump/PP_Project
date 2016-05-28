@@ -17,7 +17,7 @@ public class CppLanguageAnalizer extends RootLanguage {
     private String[] splittedFile;
     private String coutPattern = "cout\\s*(<<[():'\"`\\w\\s\\.\\&\\\\]+)+;";
     private String cinPattern = "cin\\s*(>>[():'\"`\\w\\s\\.\\&\\\\]+)+;";
-    private String multiplicationPattern = "\\d+\\s*\\*|\\*\\s\\d+|\\*=\\s*\\d+";
+    private String multiplicationPattern = "\\d+\\s*\\*|\\*\\s*\\d+|\\*=\\s*\\d+";
     private String numberPattern = "\\d+";
     private Pattern coutCompliedPattern = Pattern.compile(coutPattern);
     private Pattern cinCompliedPattern = Pattern.compile(cinPattern);
@@ -40,6 +40,7 @@ public class CppLanguageAnalizer extends RootLanguage {
             messageList.add(new Message("\""+m.group(0) + "\"\n Może być zastąpiony przy pomocy scanf()"));
             status = false;
         }
+
     }
 
     private void uglyfyMultiplication(){
@@ -54,7 +55,8 @@ public class CppLanguageAnalizer extends RootLanguage {
                     m1.find();
                     value = Integer.parseInt(m1.group());
                     if ((value & (value - 1)) == 0) {
-                        messageList.add(new Message("\"" + m.group(j) + "\"\nW linii: \n\""+ i + ": "+ splittedFile[i] +"\"\nMoże być zastąpiony przy pomocy operacji << (jest to potęga 2ki)"));
+                        messageList.add(new Message("\"" + m.group(j) + "\"\nW linii: \n\""+ i + ": "+ (splittedFile[i] + 1)
+                                +"\"\nMoże być zastąpiony przy pomocy operacji << (jest to potęga 2ki)"));
                     }
                 }
             }
