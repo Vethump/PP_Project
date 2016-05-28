@@ -40,7 +40,6 @@ public class CppLanguageAnalizer extends RootLanguage {
             messageList.add(new Message("\""+m.group(0) + "\"\n Może być zastąpiony przy pomocy scanf()"));
             status = false;
         }
-
     }
 
     private void uglyfyMultiplication(){
